@@ -8,11 +8,13 @@ export type PostDocument = Post & Document;
 export class Post {
   @Prop({
     required: true,
+    unique: false,
   })
   title: string;
 
   @Prop({
     required: true,
+    unique: false,
   })
   content: string;
 
@@ -23,7 +25,7 @@ export class Post {
   createdAt: Date;
 
   @Prop({
-    required: false,
+    required: true,
     unique: false,
   })
   createdBy: User;
